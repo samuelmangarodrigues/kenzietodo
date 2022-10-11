@@ -46,7 +46,7 @@ const TodoProvider=({children}:IChildren)=>{
 
     const createTask=async(data:formData)=>{
         await
-        api.post("/todo/",data).then((response)=>{
+        api.post("todo/",data).then((response)=>{
             console.log(response.data)
         }).catch((err)=>{
             console.log(err)
@@ -55,14 +55,14 @@ const TodoProvider=({children}:IChildren)=>{
 
     const editTask=async(data:formData)=>{
         await
-        api.patch(`/todo/${getOne}`,data).then((response)=>
+        api.patch(`todo/${getOne}`,data).then((response)=>
             console.log("atualizado")
         ).catch((err)=>console.log(err))
     }
 
     const completeTask=async(id:number)=>{
         await
-        api.put((`/todo/${id}`)).then((_)=>{
+        api.put((`todo/${id}`)).then((_)=>{
         })
     }
 
