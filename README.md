@@ -1,3 +1,16 @@
+# Teste Técnico Kenzie Academy Brasil
+Essa aplicação visa criar, atualizar, deletar e completar tarefas do dia a dia.
+ ## ``Essa é uma aplicação feita com React Js (Typescript) ``
+
+## Bibliotecas utilizadas:
+### -> Styled-components
+### -> Material UI
+### -> Axios
+### -> React-hook-form
+### -> React-Icons
+### -> Yup
+### -> @hookform/resolvers
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
