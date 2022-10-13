@@ -11,6 +11,10 @@ Essa aplicação visa criar, atualizar, deletar e completar tarefas do dia a dia
 ### -> Yup
 ### -> @hookform/resolvers
 
+
+## Link da aplicação:
+### https://kenzietodo.vercel.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
