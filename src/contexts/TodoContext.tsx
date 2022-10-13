@@ -1,7 +1,7 @@
 import { createContext,useEffect,ReactNode,useContext,useState} from "react"
 import { api } from "../services"
-
-
+import "react-toastify/dist/ReactToastify.css";
+import {toast} from "react-toastify";
 
 const TodoListContext=createContext<ITodoContext>({} as ITodoContext)
 export const useTodo=()=> useContext(TodoListContext)
@@ -46,8 +46,10 @@ const TodoProvider=({children}:IChildren)=>{
 
     const createTask=async(data:formData)=>{
         await
-        api.post("todo/",data).then((response)=>{
-            console.log(response.data)
+        api.post("todo/",data).then((_)=>{
+            toast.success("Tarefa cadastrada!", {
+                position: toast.POSITION.TOP_CENTER
+              });
         }).catch((err)=>{
             console.log(err)
         })
@@ -55,14 +57,19 @@ const TodoProvider=({children}:IChildren)=>{
 
     const editTask=async(data:formData)=>{
         await
-        api.patch(`todo/${getOne}/`,data).then((response)=>
-            console.log("atualizado")
-        ).catch((err)=>console.log(err))
+        api.patch(`todo/${getOne}/`,data).then((response)=>{
+            toast.success("Tarefa atualizada!", {
+                position: toast.POSITION.TOP_CENTER
+            });        
+    }).catch((err)=>console.log(err))
     }
 
     const completeTask=async(id:number)=>{
         await
         api.put((`todo/${id}/`)).then((_)=>{
+            toast.success("Tarefa concluída!", {
+                position: toast.POSITION.TOP_CENTER
+            });
         })
     }
 
@@ -70,6 +77,9 @@ const TodoProvider=({children}:IChildren)=>{
     const deleteTask= async(id:number)=>{
         await
         api.delete(`todo/${id}/`).then((_)=>{
+            toast.success("Tarefa deletada! ", {
+                position: toast.POSITION.TOP_CENTER
+            });
         })
     }
 

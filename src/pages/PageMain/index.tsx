@@ -9,6 +9,9 @@ import {RiArrowDownSLine} from "react-icons/ri"
 import { Modal } from "@mui/material"
 import { AlignModal, ContainerModal } from "../../components/TodoList/styles"
 import { useState } from "react"
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const CreateTaskSchema=yup.object().shape({
     description:yup.string().required("campo obrigatório")
 })
@@ -36,6 +39,7 @@ const PageMain=()=>{
     return (
         <ContainerMain>
                 <Header/>
+                <ToastContainer/>
             <ContainerShadowEffect>
                 <ContainerInputAndErrorMessage>
                     <ContainerInpList>
