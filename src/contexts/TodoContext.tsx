@@ -69,14 +69,14 @@ const TodoProvider=({children}:IChildren)=>{
 
     const deleteTask= async(id:number)=>{
         await
-        api.delete(`/todo/${id}`).then((_)=>{
+        api.delete(`todo/${id}`).then((_)=>{
         })
     }
 
     const getOneTask = async(id:number)=>{
 
         await
-        api.get(`/todo/${id}`).then((response)=>{
+        api.get(`todo/${id}`).then((response)=>{
             console.log(getOne)
             setGetOne(response.data.id)
         })
