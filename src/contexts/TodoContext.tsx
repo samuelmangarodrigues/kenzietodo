@@ -69,7 +69,7 @@ const TodoProvider=({children}:IChildren)=>{
 
     const deleteTask= async(id:number)=>{
         await
-        api.delete(`todo/${id}`).then((_)=>{
+        api.delete(`todo/${id}/`).then((_)=>{
         })
     }
 
