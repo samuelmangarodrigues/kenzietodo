@@ -48,7 +48,7 @@ const TodoProvider=({children}:IChildren)=>{
         await
         api.post("todo/",data).then((_)=>{
             toast.success("Tarefa cadastrada!", {
-                position: toast.POSITION.TOP_CENTER
+                position: toast.POSITION.TOP_RIGHT
               });
         }).catch((err)=>{
             console.log(err)
@@ -59,7 +59,7 @@ const TodoProvider=({children}:IChildren)=>{
         await
         api.patch(`todo/${getOne}/`,data).then((response)=>{
             toast.success("Tarefa atualizada!", {
-                position: toast.POSITION.TOP_CENTER
+                position: toast.POSITION.TOP_RIGHT
             });        
     }).catch((err)=>console.log(err))
     }
@@ -68,7 +68,7 @@ const TodoProvider=({children}:IChildren)=>{
         await
         api.put((`todo/${id}/`)).then((_)=>{
             toast.success("Tarefa concluída!", {
-                position: toast.POSITION.TOP_CENTER
+                position: toast.POSITION.TOP_RIGHT
             });
         })
     }
@@ -78,7 +78,7 @@ const TodoProvider=({children}:IChildren)=>{
         await
         api.delete(`todo/${id}/`).then((_)=>{
             toast.success("Tarefa deletada! ", {
-                position: toast.POSITION.TOP_CENTER
+                position: toast.POSITION.TOP_RIGHT
             });
         })
     }
